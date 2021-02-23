@@ -11,7 +11,7 @@ import {BrowserClient} from 'mpp-clients/browserClient/BrowserClient'
 // For server
 // import {ServerClient} from 'mpp-clients/serverClient/ServerClient'
 
-const client = BrowserClient; // or ServerClient
+const Client = BrowserClient; // or ServerClient
 
 const start = async () => {
   const client = new Client(); // by default `{url: 'https://multiplayerpiano.com'}`
