@@ -1,7 +1,13 @@
 # API
 
+## Install
+
+`yarn add mpp-clients`
+
+## Usage
+
 ```
-import {BrowserClientV1} from 'mpp-clients/browserClientV1'
+import {BrowserClient} from 'mpp-clients/browserClient'
 
 const client = new BrowserClientV1({url: 'https://multiplayerpiano.com'});
 
@@ -11,4 +17,13 @@ client.connect()
 client.send({type: 'note', payload: {/* Note arguments */}})
 
 client.disconnect()
+```
+
+
+## Typescript Types
+
+Import all `Action` types available in mpp.
+
+```
+import {Actions} from 'mpp-clients/Actions'
 ```
