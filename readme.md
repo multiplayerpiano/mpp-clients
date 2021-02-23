@@ -50,3 +50,22 @@ import {Action} from 'mpp-clients/actions'
 ```
 
 @todo: maybe `mpp-clients/actions` should be in another project so can be shared on server side.
+
+## Actions
+
+All communication is done via actions to keep it simple and serializable.
+
+### App Actions
+
+Actions created from the server and dispatched to all clients.
+
+### Client Actions
+
+Actions created by clients/players. Those will be sent to the server, validated and only after that dispatched to all other clients.
+
+Flow:
+
+ - Request play note
+ - Server validates you can play that note
+ - Server replies to you with note play accepted (or rejected)
+ - Server shares the note with all other clients
