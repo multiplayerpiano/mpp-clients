@@ -13,14 +13,19 @@ import {BrowserClient} from 'mpp-clients/browserClient/BrowserClient'
 
 const client = BrowserClient; // or ServerClient
 
-const client = new Client(); // by default `{url: 'https://multiplayerpiano.com'}`
+const start = async () => {
 
-// Will send `client.send({type: 'hi'})`. @todo: we should wait for a server ack so we are sure that are connected.
-client.connect()
+  const client = new Client(); // by default `{url: 'https://multiplayerpiano.com'}`
 
-client.send({type: 'note', payload: {/* Note arguments */}})
+  // Will send `client.send({type: 'hi'})`. @todo: we should wait for a server ack so we are sure that are connected.
+  // Will throw an error if can't connect, so you need a try/catch
+  await client.connect()
 
-client.disconnect()
+  client.send({type: 'note', payload: {/* Note arguments */}})
+
+  await client.disconnect()
+}
+
 ```
 
 
