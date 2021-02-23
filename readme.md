@@ -48,3 +48,5 @@ Import all `Action` types available in mpp.
 ```
 import {Action} from 'mpp-clients/actions'
 ```
+
+@todo: maybe `mpp-clients/actions` should be in another project so can be shared on server side.
