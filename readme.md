@@ -29,6 +29,8 @@ const start = async () => {
   // Will throw an error if can't connect, so you need a try/catch
   await client.connect();
 
+  // This will send a `request` type of action. Is not guaranteed that your action will be accepted by the server.
+  // After that the server will emit an action back to client if has been successful or failed.
   client.send({type: 'note', payload: {/* Note arguments */}});
 
   await client.disconnect();
